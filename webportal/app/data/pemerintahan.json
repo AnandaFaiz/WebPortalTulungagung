@@ -1,0 +1,93 @@
+{
+  "opd": [
+    { "id": 1, "nama": "Dinas Pendidikan", "singkatan": "Disdik", "link": "#" },
+    { "id": 2, "nama": "Dinas Kesehatan", "singkatan": "Dinkes", "link": "#" },
+    {
+      "id": 3,
+      "nama": "Dinas Kependudukan dan Pencatatan Sipil",
+      "singkatan": "Dispendukcapil",
+      "link": "#"
+    },
+    {
+      "id": 4,
+      "nama": "Dinas Pekerjaan Umum dan Penataan Ruang",
+      "singkatan": "DPUPR",
+      "link": "#"
+    },
+    {
+      "id": 5,
+      "nama": "Dinas Penanaman Modal dan PTSP",
+      "singkatan": "DPMPTSP",
+      "link": "#"
+    },
+    { "id": 6, "nama": "Dinas Sosial", "singkatan": "Dinsos", "link": "#" },
+    { "id": 7, "nama": "Dinas Pertanian", "singkatan": "Distan", "link": "#" },
+    {
+      "id": 8,
+      "nama": "Dinas Pariwisata, Pemuda dan Olahraga",
+      "singkatan": "Disparpora",
+      "link": "#"
+    },
+    {
+      "id": 9,
+      "nama": "Badan Perencanaan Pembangunan Daerah",
+      "singkatan": "Bappeda",
+      "link": "#"
+    },
+    {
+      "id": 10,
+      "nama": "Badan Pengelola Keuangan dan Aset Daerah",
+      "singkatan": "BPKAD",
+      "link": "#"
+    },
+    {
+      "id": 11,
+      "nama": "Sekretariat Daerah",
+      "singkatan": "Setda",
+      "link": "#"
+    },
+    { "id": 12, "nama": "Sekretariat DPRD", "singkatan": "Setwan", "link": "#" }
+  ],
+  "ppid": {
+    "deskripsi": "PPID Kabupaten Tulungagung menyediakan layanan informasi publik sesuai UU No. 14 Tahun 2008 tentang Keterbukaan Informasi Publik.",
+    "layanan": [
+      "Permohonan Informasi Publik",
+      "Pengajuan Keberatan Informasi",
+      "Sengketa Informasi",
+      "Daftar Informasi Publik"
+    ]
+  },
+  "jdih": [
+    {
+      "id": 1,
+      "jenis": "Perda",
+      "nomor": "1 Tahun 2025",
+      "tentang": "Retribusi Pelayanan Persampahan",
+      "tanggal": "2025-03-15"
+    },
+    {
+      "id": 2,
+      "jenis": "Perbup",
+      "nomor": "12 Tahun 2025",
+      "tentang": "Standar Operasional Prosedur Pelayanan Publik",
+      "tanggal": "2025-05-20"
+    },
+    {
+      "id": 3,
+      "jenis": "SK Bupati",
+      "nomor": "188/45/2025",
+      "tentang": "Penetapan Penerima Bantuan Sosial",
+      "tanggal": "2025-06-10"
+    }
+  ],
+  "dprd": {
+    "jumlah_anggota": 50,
+    "periode": "2024-2029",
+    "komisi": [
+      { "nama": "Komisi A", "bidang": "Pemerintahan & Hukum" },
+      { "nama": "Komisi B", "bidang": "Ekonomi & Keuangan" },
+      { "nama": "Komisi C", "bidang": "Pembangunan" },
+      { "nama": "Komisi D", "bidang": "Kesejahteraan Rakyat" }
+    ]
+  }
+}

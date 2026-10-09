@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "nama": "Gerdu Kalimasada",
+    "deskripsi": "Layanan Administrasi Kependudukan Online",
+    "icon": "i-tabler-users",
+    "link": "#"
+  },
+  {
+    "id": 2,
+    "nama": "e-Samsat",
+    "deskripsi": "Pembayaran Pajak Kendaraan Bermotor",
+    "icon": "i-tabler-car",
+    "link": "#"
+  },
+  {
+    "id": 3,
+    "nama": "SP4N LAPOR",
+    "deskripsi": "Pengaduan Masyarakat Online",
+    "icon": "i-tabler-speakerphone",
+    "link": "#"
+  },
+  {
+    "id": 4,
+    "nama": "Siperizinan",
+    "deskripsi": "Perizinan Usaha Online",
+    "icon": "i-tabler-file-check",
+    "link": "#"
+  }
+]

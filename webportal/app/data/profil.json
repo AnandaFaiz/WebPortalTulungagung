@@ -1,0 +1,26 @@
+{
+  "sejarah": "Kabupaten Tulungagung adalah salah satu kabupaten di Provinsi Jawa Timur yang terletak di pesisir selatan. Berdiri sejak zaman Kerajaan Majapahit, Tulungagung dikenal sebagai kota marmer dengan kekayaan alam dan budaya yang melimpah. Nama 'Tulungagung' berasal dari kata 'tulung' (pertolongan) dan 'agung' (besar), yang bermakna pertolongan yang besar.",
+  "lambang": "Lambang Kabupaten Tulungagung mengandung makna filosofis yang dalam, mencerminkan semangat gotong royong, kejayaan maritim, dan kekayaan alam daerah.",
+  "visi": "Terwujudnya Tulungagung yang Maju, Mandiri, dan Sejahtera Berbasis Pertanian, Pariwisata, dan UMKM",
+  "misi": [
+    "Meningkatkan kualitas sumber daya manusia yang beriman, bertakwa, dan berdaya saing",
+    "Mengembangkan ekonomi kerakyatan berbasis pertanian, pariwisata, dan UMKM",
+    "Meningkatkan infrastruktur dan konektivitas daerah",
+    "Mewujudkan tata kelola pemerintahan yang bersih, transparan, dan akuntabel",
+    "Melestarikan budaya dan lingkungan hidup"
+  ],
+  "pejabat": [
+    {
+      "id": 1,
+      "nama": "H. Gatut Sunoto, S.Pd., M.M.",
+      "jabatan": "Bupati Tulungagung",
+      "foto": ""
+    },
+    {
+      "id": 2,
+      "nama": "H. Ahmad Bahuri, S.E., M.M.",
+      "jabatan": "Wakil Bupati Tulungagung",
+      "foto": ""
+    }
+  ]
+}

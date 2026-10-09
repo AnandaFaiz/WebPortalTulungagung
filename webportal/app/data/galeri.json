@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "judul": "Peresmian Jembatan Desa",
+    "tanggal": "2026-10-05",
+    "tipe": "foto"
+  },
+  {
+    "id": 2,
+    "judul": "Festival Budaya 2026",
+    "tanggal": "2026-10-07",
+    "tipe": "foto"
+  },
+  {
+    "id": 3,
+    "judul": "Pelatihan UMKM Digital",
+    "tanggal": "2026-10-04",
+    "tipe": "video"
+  },
+  {
+    "id": 4,
+    "judul": "Penghijauan Pesisir",
+    "tanggal": "2026-10-03",
+    "tipe": "foto"
+  },
+  {
+    "id": 5,
+    "judul": "Rapat Paripurna DPRD",
+    "tanggal": "2026-10-02",
+    "tipe": "foto"
+  },
+  {
+    "id": 6,
+    "judul": "Kunjungan Kerja Bupati",
+    "tanggal": "2026-10-01",
+    "tipe": "video"
+  },
+  {
+    "id": 7,
+    "judul": "Bazar UMKM Kabupaten",
+    "tanggal": "2026-09-28",
+    "tipe": "foto"
+  },
+  {
+    "id": 8,
+    "judul": "Vaksinasi Massal",
+    "tanggal": "2026-09-25",
+    "tipe": "foto"
+  }
+]

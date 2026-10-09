@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "judul": "Pemkab Tulungagung Luncurkan Program Digitalisasi Layanan Desa",
+    "deskripsi": "Program ini bertujuan mempercepat pelayanan administrasi di tingkat desa dengan sistem terintegrasi.",
+    "tanggal": "2026-10-08",
+    "kategori": "Pemerintahan"
+  },
+  {
+    "id": 2,
+    "judul": "Festival Budaya Tulungagung 2026 Resmi Dibuka",
+    "deskripsi": "Ribuan warga memadati alun-alun untuk menyaksikan parade budaya dan pertunjukan seni tradisional.",
+    "tanggal": "2026-10-07",
+    "kategori": "Budaya"
+  },
+  {
+    "id": 3,
+    "judul": "Realisasi Investasi Semester I Capai Rp652 Miliar",
+    "deskripsi": "Capaian ini melampaui target yang ditetapkan pada awal tahun, didorong oleh sektor pariwisata dan UMKM.",
+    "tanggal": "2026-10-06",
+    "kategori": "Ekonomi"
+  },
+  {
+    "id": 4,
+    "judul": "Bupati Resmikan Jembatan Penghubung Antar Kecamatan",
+    "deskripsi": "Jembatan ini diharapkan memperlancar mobilitas warga dan mendorong pertumbuhan ekonomi desa.",
+    "tanggal": "2026-10-05",
+    "kategori": "Pembangunan"
+  },
+  {
+    "id": 5,
+    "judul": "Pelatihan UMKM Digital Digelar untuk 200 Peserta",
+    "deskripsi": "Pelatihan ini bertujuan meningkatkan daya saing produk lokal di pasar digital.",
+    "tanggal": "2026-10-04",
+    "kategori": "Ekonomi"
+  },
+  {
+    "id": 6,
+    "judul": "Program Penghijauan di Kawasan Pesisir Selatan",
+    "deskripsi": "Penanaman 10.000 pohon mangrove untuk melestarikan ekosistem pesisir.",
+    "tanggal": "2026-10-03",
+    "kategori": "Lingkungan"
+  }
+]

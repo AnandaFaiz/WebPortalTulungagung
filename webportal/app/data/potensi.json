@@ -1,0 +1,62 @@
+{
+  "pariwisata": [
+    {
+      "id": 1,
+      "nama": "Pantai Popoh",
+      "deskripsi": "Pantai eksotis dengan pasir putih dan ombak yang menenangkan.",
+      "lokasi": "Kec. Besuki"
+    },
+    {
+      "id": 2,
+      "nama": "Waduk Wonorejo",
+      "deskripsi": "Waduk terbesar di Asia Tenggara dengan pemandangan alam yang indah.",
+      "lokasi": "Kec. Pagerwojo"
+    },
+    {
+      "id": 3,
+      "nama": "Goa Lowo",
+      "deskripsi": "Goa purbakala dengan stalaktit dan stalagmit yang menakjubkan.",
+      "lokasi": "Kec. Besuki"
+    }
+  ],
+  "umkm": [
+    {
+      "id": 1,
+      "nama": "Marmer Tulungagung",
+      "deskripsi": "Kerajinan marmer berkualitas tinggi yang telah mendunia.",
+      "kategori": "Kerajinan"
+    },
+    {
+      "id": 2,
+      "nama": "Batik Tulungagung",
+      "deskripsi": "Batik dengan motif khas Tulungagung yang sarat makna budaya.",
+      "kategori": "Fashion"
+    },
+    {
+      "id": 3,
+      "nama": "Kopi Ijen",
+      "deskripsi": "Kopi robusta dan arabika dengan cita rasa khas pegunungan.",
+      "kategori": "Kuliner"
+    }
+  ],
+  "investasi": [
+    {
+      "id": 1,
+      "sektor": "Pariwisata",
+      "deskripsi": "Pengembangan kawasan wisata terpadu di pesisir selatan.",
+      "nilai": "Rp 150 Miliar"
+    },
+    {
+      "id": 2,
+      "sektor": "Pertanian",
+      "deskripsi": "Modernisasi pertanian dan agroindustri.",
+      "nilai": "Rp 200 Miliar"
+    },
+    {
+      "id": 3,
+      "sektor": "Infrastruktur",
+      "deskripsi": "Pembangunan jalan tol dan fasilitas umum.",
+      "nilai": "Rp 500 Miliar"
+    }
+  ]
+}

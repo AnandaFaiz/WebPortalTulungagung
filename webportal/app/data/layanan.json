@@ -1,0 +1,65 @@
+{
+  "kategori": [
+    {
+      "id": 1,
+      "nama": "Kependudukan",
+      "deskripsi": "KTP, KK, Akta Kelahiran, dan layanan Dispendukcapil lainnya.",
+      "icon": "i-tabler-users",
+      "link": "/layanan/kependudukan"
+    },
+    {
+      "id": 2,
+      "nama": "Perizinan",
+      "deskripsi": "Izin Usaha, IMB, SIUP, dan perizinan lainnya.",
+      "icon": "i-tabler-file-text",
+      "link": "/layanan/perizinan"
+    },
+    {
+      "id": 3,
+      "nama": "Kesehatan",
+      "deskripsi": "RSUD, Puskesmas, dan layanan kesehatan daerah.",
+      "icon": "i-tabler-heartbeat",
+      "link": "/layanan/kesehatan"
+    },
+    {
+      "id": 4,
+      "nama": "Pendidikan",
+      "deskripsi": "PPDB, Beasiswa, dan layanan pendidikan.",
+      "icon": "i-tabler-school",
+      "link": "/layanan/pendidikan"
+    },
+    {
+      "id": 5,
+      "nama": "Perpajakan",
+      "deskripsi": "PBB, Pajak Daerah, dan layanan SAMSAT.",
+      "icon": "i-tabler-receipt",
+      "link": "/layanan/perpajakan"
+    },
+    {
+      "id": 6,
+      "nama": "Pengaduan",
+      "deskripsi": "Laporkan keluhan dan aspirasi masyarakat.",
+      "icon": "i-tabler-speakerphone",
+      "link": "/layanan/pengaduan"
+    }
+  ],
+  "mpp": {
+    "deskripsi": "Mal Pelayanan Publik Kabupaten Tulungagung menyediakan lebih dari 120 jenis layanan dari berbagai instansi dalam satu gedung.",
+    "alamat": "Jl. A. Yani Timur No. 37, Tulungagung",
+    "jam_operasional": "Senin - Jumat, 08.00 - 15.00 WIB",
+    "jumlah_layanan": 120,
+    "instansi": 24
+  },
+  "darurat": [
+    {
+      "nama": "TEMS (Ambulans)",
+      "nomor": "(0355) 320-119",
+      "icon": "i-tabler-ambulance"
+    },
+    { "nama": "Pemadam Kebakaran", "nomor": "113", "icon": "i-tabler-flame" },
+    { "nama": "Kepolisian", "nomor": "110", "icon": "i-tabler-shield" },
+    { "nama": "SAR", "nomor": "115", "icon": "i-tabler-lifebuoy" },
+    { "nama": "PLN", "nomor": "123", "icon": "i-tabler-bolt" },
+    { "nama": "PDAM", "nomor": "(0355) 321-999", "icon": "i-tabler-droplet" }
+  ]
+}
