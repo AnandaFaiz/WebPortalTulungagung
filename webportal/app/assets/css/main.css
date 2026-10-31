@@ -9,10 +9,12 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+  overflow-y: scroll;
 }
 
 body {
   @apply bg-white text-slate-600;
+  padding-right: 0 !important;
 }
 
 h1,
@@ -26,5 +28,36 @@ h4 {
   letter-spacing: -0.01em;
   @apply text-slate-900 font-bold;
 }
+/* ==========================================
+   Animation: Fade In Up
+   ========================================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
 
+.animate-fade-in-up-delay-1 {
+  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+}
+
+.animate-fade-in-up-delay-2 {
+  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.24s both;
+}
+
+.animate-fade-in-up-delay-3 {
+  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.36s both;
+}
+
+.animate-fade-in-up-delay-4 {
+  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.48s both;
+}

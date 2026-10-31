@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="">
 defineProps({
     label: { type: String, default: 'Simpan' },
     size: { type: String, default: 'md' },

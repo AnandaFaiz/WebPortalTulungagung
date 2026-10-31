@@ -1,112 +1,143 @@
 <script setup>
-const user = {
-    name: 'Admin Pemkab',
-    email: 'admin@tulungagung.go.id',
-    avatar: ''
-}
+import { adminNavigation } from '~/utils/admin-navigation'
 
-const sidebarLinks = [
-    {
-        label: 'Dashboard',
-        icon: 'i-tabler-layout-dashboard',
-        to: '/admin'
-    },
+const { user, logout, can } = useAuth()
+
+const userProfile = computed(() => user.value || {
+    nama: user.value?.nama || 'Admin',
+    email: user.value?.email || '',
+    role: user.value?.role || 'super_admin'
+})
+
+// ==== Semua menu (tidak berubah) ====
+const legacySidebarLinks = [
+    { label: 'Dashboard', icon: 'i-tabler-layout-dashboard', to: '/admin', permission: 'dashboard' },
     {
         label: 'Konten (CMS)',
         icon: 'i-tabler-file-text',
+        permission: 'cms',
         children: [
-            { label: 'Halaman Statis', icon: 'i-tabler-file-description', to: '/admin/cms/halaman' },
-            { label: 'Berita', icon: 'i-tabler-news', to: '/admin/cms/berita' },
-            { label: 'Pengumuman', icon: 'i-tabler-speakerphone', to: '/admin/cms/pengumuman' },
-            { label: 'Galeri', icon: 'i-tabler-photo', to: '/admin/cms/galeri' },
-            { label: 'Sambutan Bupati', icon: 'i-tabler-quote', to: '/admin/cms/sambutan' },
-            { label: 'Banner', icon: 'i-tabler-presentation', to: '/admin/cms/banner' }
+            { label: 'Halaman Statis', icon: 'i-tabler-file-description', to: '/admin/cms/halaman', permission: 'cms.halaman' },
+            { label: 'Berita', icon: 'i-tabler-news', to: '/admin/cms/berita', permission: 'cms.berita' },
+            { label: 'Kategori Berita', icon: 'i-tabler-category', to: '/admin/cms/kategori-berita', permission: 'cms.kategori' },
+            { label: 'Pengumuman', icon: 'i-tabler-speakerphone', to: '/admin/cms/pengumuman', permission: 'cms.pengumuman' },
+            { label: 'Galeri', icon: 'i-tabler-photo', to: '/admin/cms/galeri', permission: 'cms.galeri' },
+            { label: 'Sambutan Bupati', icon: 'i-tabler-quote', to: '/admin/cms/sambutan', permission: 'cms.sambutan' },
+            { label: 'Wallpaper Hero', icon: 'i-tabler-photo', to: '/admin/cms/banner', permission: 'cms.banner' },
+            { label: 'Event/Agenda', icon: 'i-tabler-calendar-event', to: '/admin/cms/event', permission: 'cms.event' },
+            { label: 'Layanan Populer', icon: 'i-tabler-star', to: '/admin/cms/layanan-terpopuler', permission: 'cms.layanan' },
+            { label: 'Pencarian Populer', icon: 'i-tabler-search', to: '/admin/cms/pencarian-populer', permission: 'cms.pencarian' }
         ]
     },
     {
         label: 'Profil & Pemerintahan',
         icon: 'i-tabler-building-bank',
+        permission: 'pemerintahan',
         children: [
-            { label: 'Profil Daerah', icon: 'i-tabler-map-2', to: '/admin/pemerintahan/profil' },
-            { label: 'Struktur Organisasi', icon: 'i-tabler-sitemap', to: '/admin/pemerintahan/struktur' },
-            { label: 'Profil Pejabat', icon: 'i-tabler-user-star', to: '/admin/pemerintahan/pejabat' },
-            { label: 'OPD', icon: 'i-tabler-building-community', to: '/admin/pemerintahan/opd' },
-            { label: 'DPRD', icon: 'i-tabler-gavel', to: '/admin/pemerintahan/dprd' },
-            { label: 'PPID', icon: 'i-tabler-file-search', to: '/admin/pemerintahan/ppid' },
-            { label: 'JDIH', icon: 'i-tabler-scale', to: '/admin/pemerintahan/jdih' }
+            { label: 'Profil Daerah', icon: 'i-tabler-map-2', to: '/admin/pemerintahan/profil', permission: 'pemerintahan.profil' },
+            { label: 'Struktur Organisasi', icon: 'i-tabler-sitemap', to: '/admin/pemerintahan/struktur', permission: 'pemerintahan.struktur' },
+            { label: 'Profil Pejabat', icon: 'i-tabler-user-star', to: '/admin/pemerintahan/pejabat', permission: 'pemerintahan.pejabat' },
+            { label: 'OPD', icon: 'i-tabler-building-community', to: '/admin/pemerintahan/opd', permission: 'pemerintahan.opd' },
+            { label: 'Tautan Eksternal', icon: 'i-tabler-external-link', to: '/admin/pemerintahan/tautan', permission: 'pemerintahan.tautan' }
         ]
     },
     {
         label: 'Layanan Publik',
         icon: 'i-tabler-briefcase',
+        permission: 'layanan',
         children: [
-            { label: 'Shortcut Layanan', icon: 'i-tabler-bolt', to: '/admin/layanan/shortcut' },
-            { label: 'Kategori Layanan', icon: 'i-tabler-category', to: '/admin/layanan/kategori' },
-            { label: 'Daftar Layanan', icon: 'i-tabler-list-details', to: '/admin/layanan/daftar' },
-            { label: 'Informasi MPP', icon: 'i-tabler-building-store', to: '/admin/layanan/mpp' },
-            { label: 'Layanan Darurat', icon: 'i-tabler-alert-circle', to: '/admin/layanan/darurat' }
+            { label: 'Layanan Darurat', icon: 'i-tabler-alert-circle', to: '/admin/layanan/darurat', permission: 'layanan.darurat' },
+            { label: 'Kategori Layanan', icon: 'i-tabler-category', to: '/admin/layanan/kategori', permission: 'layanan.kategori' },
+            { label: 'Daftar Layanan', icon: 'i-tabler-list-details', to: '/admin/layanan/daftar', permission: 'layanan.daftar' },
+            { label: 'Informasi MPP', icon: 'i-tabler-building-store', to: '/admin/layanan/mpp', permission: 'layanan.mpp' }
         ]
     },
     {
         label: 'Interaksi',
         icon: 'i-tabler-message-2',
+        permission: 'interaksi',
         children: [
-            { label: 'Media Sosial', icon: 'i-tabler-share-3', to: '/admin/interaksi/medsos' },
-            { label: 'Tiket Pengaduan', icon: 'i-tabler-ticket', to: '/admin/interaksi/tiket' },
-            { label: 'Kategori & Status', icon: 'i-tabler-tag', to: '/admin/interaksi/kategori' }
+            { label: 'Media Sosial', icon: 'i-tabler-share-3', to: '/admin/interaksi/medsos', permission: 'interaksi.medsos' },
+            { label: 'Tiket Pengaduan', icon: 'i-tabler-ticket', to: '/admin/interaksi/tiket', permission: 'interaksi.tiket' },
+            { label: 'Kategori & Status', icon: 'i-tabler-tag', to: '/admin/interaksi/kategori', permission: 'interaksi.kategori' }
         ]
     },
-    {
-        label: 'Potensi Daerah',
-        icon: 'i-tabler-mountain',
-        children: [
-            { label: 'Pariwisata', icon: 'i-tabler-beach', to: '/admin/potensi/pariwisata' },
-            { label: 'UMKM', icon: 'i-tabler-shopping-bag', to: '/admin/potensi/umkm' },
-            { label: 'Investasi', icon: 'i-tabler-trending-up', to: '/admin/potensi/investasi' }
-        ]
-    },
-    {
-        label: 'Aplikasi',
-        icon: 'i-tabler-apps',
-        to: '/admin/aplikasi'
-    },
-    {
-        label: 'Media',
-        icon: 'i-tabler-photo',
-        to: '/admin/media'
-    },
+    { label: 'Aplikasi', icon: 'i-tabler-apps', to: '/admin/aplikasi', permission: 'aplikasi' },
+    { label: 'Media', icon: 'i-tabler-photo', to: '/admin/media', permission: 'media' },
     {
         label: 'Pengaturan',
         icon: 'i-tabler-settings',
+        permission: 'pengaturan',
         children: [
-            { label: 'Identitas Situs', icon: 'i-tabler-id-badge-2', to: '/admin/pengaturan/identitas' },
-            { label: 'Menu Navigasi', icon: 'i-tabler-menu-2', to: '/admin/pengaturan/menu' },
-            { label: 'Kontak', icon: 'i-tabler-phone', to: '/admin/pengaturan/kontak' }
+            { label: 'Identitas Situs', icon: 'i-tabler-id-badge-2', to: '/admin/pengaturan/identitas', permission: 'pengaturan.identitas' },
+            { label: 'Menu Navigasi', icon: 'i-tabler-menu-2', to: '/admin/pengaturan/menu', permission: 'pengaturan.menu' },
+            { label: 'Kontak', icon: 'i-tabler-phone', to: '/admin/pengaturan/kontak', permission: 'pengaturan.kontak' }
         ]
     },
     {
         label: 'Pengguna & Hak Akses',
         icon: 'i-tabler-users',
+        permission: 'pengguna',
         children: [
-            { label: 'Daftar Pengguna', icon: 'i-tabler-users-group', to: '/admin/pengguna/daftar' },
-            { label: 'Role', icon: 'i-tabler-shield-lock', to: '/admin/pengguna/role' },
-            { label: 'Log Aktivitas', icon: 'i-tabler-history', to: '/admin/pengguna/log' }
+            { label: 'Daftar Pengguna', icon: 'i-tabler-users-group', to: '/admin/pengguna/daftar', permission: 'pengguna.daftar' },
+            { label: 'Role', icon: 'i-tabler-shield-lock', to: '/admin/pengguna/role', permission: 'pengguna.role' },
+            { label: 'Log Aktivitas', icon: 'i-tabler-history', to: '/admin/pengguna/log', permission: 'pengguna.log' }
         ]
     }
 ]
 
+const sidebarLinks = adminNavigation
+
+// ==== Filter menu berdasarkan permission dari DB ====
+const filteredSidebarLinks = computed(() => {
+    return sidebarLinks
+        .map(item => {
+            // ==== Item dengan children ====
+            if (item.children) {
+                // Filter children dulu
+                const filteredChildren = item.children.filter(child => can(child.permission))
+                // Kalau tidak ada child yang lolos, sembunyikan parent
+                if (filteredChildren.length === 0) return null
+                // Kalau ada, tampilkan parent + children yang lolos
+                return { ...item, children: filteredChildren }
+            }
+
+            // ==== Item tanpa children ====
+            // Cek permission langsung
+            return can(item.permission) ? item : null
+        })
+        .filter(Boolean) // buang yang null
+})
+
+// ==== Label role untuk display ====
+const roleLabel = computed(() => {
+    const map = {
+        super_admin: 'Super Admin',
+        admin_opd: 'Admin OPD',
+        editor: 'Editor'
+    }
+    return map[user.value?.role] || 'Admin'
+})
+
 const route = useRoute()
 const isSidebarOpen = ref(true)
 
-const userMenuItems = [
+const userMenuItems = computed(() => [
     [
-        { label: 'Profil', icon: 'i-tabler-user', to: '/admin/profil' },
-        { label: 'Pengaturan', icon: 'i-tabler-settings', to: '/admin/pengaturan' }
+        { label: 'Profil Saya', icon: 'i-tabler-user', to: '/admin/profil' },
+        ...(can('pengaturan')
+            ? [{ label: 'Pengaturan', icon: 'i-tabler-settings', to: '/admin/pengaturan' }]
+            : [])
     ],
     [
-        { label: 'Keluar', icon: 'i-tabler-logout', to: '/' }
+        {
+            label: 'Keluar',
+            icon: 'i-tabler-logout',
+            color: 'error',
+            onSelect: async () => { await logout() }
+        }
     ]
-]
+])
 </script>
 
 <template>
@@ -126,7 +157,7 @@ const userMenuItems = [
 
             <!-- Nav Menu -->
             <nav class="flex-1 overflow-y-auto py-4 px-2 sidebar-scroll">
-                <template v-for="(item, i) in sidebarLinks" :key="i">
+                <template v-for="(item, i) in filteredSidebarLinks" :key="i">
                     <!-- Item dengan children -->
                     <div v-if="item.children">
                         <div
@@ -163,11 +194,14 @@ const userMenuItems = [
                 <div class="flex items-center gap-3">
                     <div
                         class="w-9 h-9 rounded-full bg-sky-500 flex items-center justify-center text-white font-bold shrink-0">
-                        {{ user.name.charAt(0) }}
+                        {{ userProfile.nama.charAt(0) }}
                     </div>
                     <div v-if="isSidebarOpen" class="flex-1 min-w-0">
-                        <p class="text-sm font-semibold text-sky-900 dark:text-white truncate">{{ user.name }}</p>
-                        <p class="text-xs text-sky-700/70 dark:text-slate-400 truncate">{{ user.email }}</p>
+                        <p class="text-sm font-semibold text-sky-900 dark:text-white truncate">{{ userProfile.nama }}
+                        </p>
+                        <div class="flex items-center gap-1 mt-0.5">
+                            <UBadge color="primary" variant="subtle" size="xs">{{ roleLabel }}</UBadge>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -177,7 +211,7 @@ const userMenuItems = [
         <div class="transition-all duration-300 flex flex-col min-h-screen" :class="isSidebarOpen ? 'ml-64' : 'ml-16'">
             <!-- TOP BAR -->
             <header
-                class="sticky top-0 z-30 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 h-16 flex items-center px-6 gap-4">
+                class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 h-16 flex items-center px-6 gap-4">
                 <UButton
                     :icon="isSidebarOpen ? 'i-tabler-layout-sidebar-left-collapse' : 'i-tabler-layout-sidebar-left-expand'"
                     color="neutral" variant="ghost" @click="isSidebarOpen = !isSidebarOpen" />
@@ -190,11 +224,11 @@ const userMenuItems = [
 
                 <UButton icon="i-tabler-bell" color="neutral" variant="ghost" />
                 <UButton icon="i-tabler-home" color="neutral" variant="ghost" to="/" />
-                <UDropdownMenu :items="userMenuItems">
+                <UDropdownMenu :items="userMenuItems" :modal="false">
                     <UButton color="neutral" variant="ghost">
                         <div
                             class="w-7 h-7 rounded-full bg-sky-500 flex items-center justify-center text-white text-xs font-bold">
-                            {{ user.name.charAt(0) }}
+                            {{ userProfile.nama.charAt(0) }}
                         </div>
                     </UButton>
                 </UDropdownMenu>

@@ -1,5 +1,5 @@
 <template>
-  <UApp>
+  <UApp :color-mode="'light'">
     <NuxtRouteAnnouncer />
     <NuxtLayout>
       <NuxtPage />

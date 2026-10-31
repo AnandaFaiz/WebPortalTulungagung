@@ -9,6 +9,12 @@ export default defineNuxtConfig({
       inline: [/[\\/]node_modules[\\/]nuxt[\\/]dist[\\/]/],
     },
   },
+  colorMode: {
+    preference: "light",
+    fallback: "light",
+    classSuffix: "",
+    storageKey: "nuxt-color-mode",
+  },
   fonts: {
     families: [
       {
@@ -17,5 +23,17 @@ export default defineNuxtConfig({
         weights: [400, 500, 600, 700, 800],
       },
     ],
+  },
+  runtimeConfig: {
+    dbHost: process.env.DB_HOST,
+    dbPort: process.env.DB_PORT,
+    dbUser: process.env.DB_USER,
+    dbPassword: process.env.DB_PASSWORD,
+    dbName: process.env.DB_NAME,
+    jwtSecret: process.env.JWT_SECRET,
+  },
+  routeRules: {
+    "/admin/**": { ssr: false }, // Render di client saja
+    "/login": { ssr: false }, // Login juga client-only
   },
 });
