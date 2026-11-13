@@ -1,0 +1,17 @@
+# Local environment
+.env
+.env.*
+!.env.example
+
+# Node tooling
+node_modules/
+npm-debug.log*
+
+# Runtime uploads
+public/uploads/*
+!public/uploads/.gitkeep
+
+# Build output
+bin/
+*.exe
+*.test
